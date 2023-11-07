@@ -1,0 +1,15 @@
+<body style="width: 100vw; height: 100vh; background-color: #0e0e0e; overflow: hidden;">
+    <h1 style=" text-align: center; color: whitesmoke;">Login</h1>
+
+    {% if error_message %}
+    {{error_message}}
+    {% endif %}
+    <div style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <form action="" method="POST"
+            style="margin: 20px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 20px; background-color: whitesmoke; width: 600px; padding: 20px; font-size: 20px; font-weight: 500;">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
