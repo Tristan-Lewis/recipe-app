@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 difficulty_choices = (('easy', 'Easy'),
                       ('medium', 'Medium'),
@@ -14,17 +15,13 @@ class Recipe(models.Model):
     ingredients = models.TextField(max_length=120)
     cooking_time = models.FloatField(help_text='in minutes')
     difficulty = models.CharField(max_length=12, choices=difficulty_choices)
+    pic = models.ImageField(upload_to='food' , default='book.png')
+
+    def get_absolute_url(self):
+        return reverse ('recipes:detail', kwargs={'pk': self.pk})
 
     def __repr__(self):
-        return (
-            "<Recipe ID/Name: "
-            + str(self.id)
-            + "-"
-            + self.name
-            + "Diff: "
-            + self.difficulty
-            + ">"
-        )
+        return str(self.name)
 
     def __str__(self):
         return str(self.name)
