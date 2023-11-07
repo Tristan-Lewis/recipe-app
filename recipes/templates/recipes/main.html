@@ -1,5 +1,7 @@
 <body style="display: flex; align-items: center; justify-content: center; background: #0e0e0e;">
-    <a href="{%url 'logout' %}"> Logout </a>
+    <a href="{%url 'logout' %}"
+        style="position: absolute; top: 30px; left: 30px; text-decoration: none; border: 3px solid whitesmoke; width: 100px; font-size: 20px; color: whitesmoke; padding: 5px 0; border-radius: 20px; font-weight: 700; text-align: center;">
+        Logout </a>
     <table border="1" cellspacing="20" style="border: none;">
         {% for object in object_list %} {% comment%} now go through the list element-by-element {% endcomment%}
         <tr>

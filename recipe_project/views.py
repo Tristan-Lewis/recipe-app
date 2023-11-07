@@ -28,7 +28,7 @@ def login_view(request):
               # then use pre-defined Django function to login
                 login(request, user)
                 # & send the user to desired page
-                return redirect('recipes:main')
+                return redirect('../recipe-list')
         else:  # in case of error
             error_message = 'ooops.. something went wrong'  # print error message
 
