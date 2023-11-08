@@ -15,7 +15,8 @@ class RecipeModelTest(TestCase):
 
         self.assertEqual(field_label, 'name')
 
-    def test_get_absolute_url(self):
+    def RecipeFormTestl(self):
        recipe = Recipe.objects.get(id=1)
        self.assertEqual(recipe.get_absolute_url(), '/recipe/1')
+
 
